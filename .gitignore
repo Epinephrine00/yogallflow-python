@@ -1,0 +1,9 @@
+*.json
+
+*.ui
+
+ui1.py
+
+test.py
+
+data.bin
