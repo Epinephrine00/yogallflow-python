@@ -47,6 +47,7 @@ class MainWindow(QMainWindow, ui):
 
         self.pushButton_18.clicked.connect(self.rotateCounterClockwise)
         self.pushButton_19.clicked.connect(self.rotateClockwise)
+        self.pushButton_20.clicked.connect(self.applyColorAtAll)
         
 
         self.listWidget.itemDoubleClicked.connect(self.item_double_clicked)
@@ -113,6 +114,11 @@ class MainWindow(QMainWindow, ui):
         self.horizontalSlider_2.setValue(g)
         self.horizontalSlider_3.setValue(b)
         self.ledSets[self.CurrentSelectedLED] = [r, g, b]
+        self.setColors()
+    def applyColorAtAll(self):
+        r, g, b = self.horizontalSlider.value(), self.horizontalSlider_2.value(), self.horizontalSlider_3.value()
+        for i in range(12):
+            self.ledSets[i] = [r,g,b]
         self.setColors()
     def setColors(self):
         for i in range(len(self.ledSets)):
@@ -232,7 +238,7 @@ class MainWindow(QMainWindow, ui):
 
             try:
                 with open(file_name, 'w', encoding='utf-8') as f:
-                    json.dump(self.Data, f, ensure_ascii=False, indent=4)
+                    json.dump(self.Data, f, ensure_ascii=False)
                 QMessageBox.information(None, "저장 성공", f"파일이 성공적으로 저장되었습니다. ")
             except Exception as e:
                 QMessageBox.critical(None, "저장 오류", f"파일 저장에 실패했습니다. ")

@@ -197,6 +197,9 @@ class Ui_MainWindow(object):
         self.horizontalLayout_3.setObjectName("horizontalLayout_3")
         spacerItem10 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_3.addItem(spacerItem10)
+        self.pushButton_20 = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_20.setObjectName("pushButton_20")
+        self.horizontalLayout_3.addWidget(self.pushButton_20)
         self.pushButton_15 = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_15.setObjectName("pushButton_15")
         self.horizontalLayout_3.addWidget(self.pushButton_15)
@@ -261,6 +264,7 @@ class Ui_MainWindow(object):
         self.pushButton_13.setText(_translate("MainWindow", "저장하기"))
         self.pushButton_16.setText(_translate("MainWindow", "새로만들기"))
         self.pushButton_17.setText(_translate("MainWindow", "내보내기"))
+        self.pushButton_20.setText(_translate("MainWindow", "전체적용"))
 
 
 if __name__ == "__main__":
